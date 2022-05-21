@@ -1,0 +1,80 @@
+{% load static %}
+
+<div class="mb-3">
+    <label for="onde_comprou" class="form-label">Tipo de Loja</label>
+    <select class="form-select" name="onde_comprou" id="onde_comprou">
+        <option value="" {{data.onde_comprou|yesno:",selected" }} disabled>Selecione o tipo de loja...</option>
+        <option value="Física" {% if data.onde_comprou == "Física" %} selected {% endif %}>Física</option>
+        <option value="Online" {% if data.onde_comprou == "Online" %} selected {% endif %}>Online</option>
+    </select>
+</div>
+<div class="mb-3">
+    <label for="tipo_roupa" class="form-label">Tipo de Roupa</label>
+    <input type="text" class="form-control" name="tipo_roupa" value="{{ data.tipo_roupa }}">
+</div>
+<div class="mb-3">
+    <label for="cor" class="form-label">Cor da Peça</label>
+    <input type="text" class="form-control" name="cor" value="{{ data.cor }}">
+</div>
+<div class="mb-3">
+    <label for="preco" class="form-label">Preço da Peça (R$)</label>
+    <input type="number" class="form-control" id="preco" min="0" step="0.01" name="preco">
+    <script>
+        let preco = '{{ data.preco }}';
+        if (preco) {
+            preco = Number(preco.replace(',', '.'));
+            let input = document.getElementById('preco');
+            input.value = preco;
+        }
+    </script>
+</div>
+<div class="mb-3">
+    <label for="genero" class="form-label">Gênero</label>
+    <select class="form-select" name="genero" id="genero">
+        <option value="" {{data.genero|yesno:",selected" }} disabled>Selecione o gênero...</option>
+        <option value="Feminino" {% if data.genero == "Feminino" %} selected {% endif %}>Feminino</option>
+        <option value="Masculino" {% if data.genero == "Masculino" %} selected {% endif %}>Masculino</option>
+    </select>
+</div>
+<div class="mb-3">
+    <label for="tamanho" class="form-label">Tamanho</label>
+    <select class="form-select" name="tamanho" id="tamanho">
+        <option value="" {{data.tamanho|yesno:",selected" }} disabled>Selecione o tamanho da peça...</option>
+        <option value="PP" {% if data.tamanho == "PP" %} selected {% endif %}>PP</option>
+        <option value="P" {% if data.tamanho == "P" %} selected {% endif %}>P</option>
+        <option value="M" {% if data.tamanho == "M" %} selected {% endif %}>M</option>
+        <option value="G" {% if data.tamanho == "G" %} selected {% endif %}>G</option>
+        <option value="GG" {% if data.tamanho == "GG" %} selected {% endif %}>GG</option>
+        <option value="EX" {% if data.tamanho == "EX" %} selected {% endif %}>EX</option>
+    </select>
+</div>
+<div class="mb-3">
+    <label for="mes" class="form-label">Mês</label>
+    <select class="form-select" name="mes" id="mes">
+        <option value="" {{data.mes|yesno:",selected" }} disabled>Selecione o mês da venda...</option>
+        <option value="Janeiro" {% if data.mes == "Janeiro" %} selected {% endif %}>Janeiro</option>
+        <option value="Fevereiro" {% if data.mes == "Fevereiro" %} selected {% endif %}>Fevereiro</option>
+        <option value="Março" {% if data.mes == "Março" %} selected {% endif %}>Março</option>
+        <option value="Abril" {% if data.mes == "Abril" %} selected {% endif %}>Abril</option>
+        <option value="Maio" {% if data.mes == "Maio" %} selected {% endif %}>Maio</option>
+        <option value="Junho" {% if data.mes == "Junho" %} selected {% endif %}>Junho</option>
+        <option value="Julho" {% if data.mes == "Julho" %} selected {% endif %}>Julho</option>
+        <option value="Agosto" {% if data.mes == "Agosto" %} selected {% endif %}>Agosto</option>
+        <option value="Setembro" {% if data.mes == "Setembro" %} selected {% endif %}>Setembro</option>
+        <option value="Outubro" {% if data.mes == "Outubro" %} selected {% endif %}>Outubro</option>
+        <option value="Novembro" {% if data.mes == "Novembro" %} selected {% endif %}>Novembro</option>
+        <option value="Dezembro" {% if data.mes == "Dezembro" %} selected {% endif %}>Dezembro</option>
+    </select>
+</div>
+<div class="mb-3">
+    <label for="estacao" class="form-label">Estação do Ano</label>
+    <select class="form-select" name="estacao" id="estacao">
+        <option value="" {{data.estacao|yesno:",selected" }} disabled>Selecione a estação...</option>
+        <option value="Verão" {% if data.estacao == "Verão" %} selected {% endif %}>Verão</option>
+        <option value="Outono" {% if data.estacao == "Outono" %} selected {% endif %}>Outono</option>
+        <option value="Inverno" {% if data.estacao == "Inverno" %} selected {% endif %}>Inverno</option>
+        <option value="Primavera" {% if data.estacao == "Primavera" %} selected {% endif %}>Primavera</option>
+    </select>
+</div>
+
+<script src="{% static 'js/vendas-form-validate.js' %}"></script>

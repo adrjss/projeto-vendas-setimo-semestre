@@ -1,0 +1,9 @@
+{% if messages %}
+    {% for message in messages %}
+        <script>Swal.fire({
+            icon: "{{ message.tags }}",
+            confirmButtonColor: "#3085d6",
+            text: "{{ message }}"
+        })</script>
+    {% endfor %}
+{% endif %}

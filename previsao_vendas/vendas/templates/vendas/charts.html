@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %}
+    Gráficos
+{% endblock 'title' %}
+
+{% block 'content' %}
+
+    <div class="container">
+        <h1 class="mb-5">Gráficos</h1>
+        <div class="d-flex justify-content-center"">
+            <canvas id="chartTipoRoupa" class="chart"></canvas>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-center"">
+            <canvas id="chartTamanho" class="chart"></canvas>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-center"">
+            <canvas id="chartCor" class="chart"></canvas>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-center"">
+            <canvas id="chartTipoLoja" class="pie-chart"></canvas>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-center"">
+            <canvas id="chartGenero" class="pie-chart"></canvas>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-center"">
+            <canvas id="chartVendasMes" class="chart"></canvas>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-center"">
+            <canvas id="chartPrevisao" class="chart"></canvas>
+        </div>
+    </div>
+
+    <script src="{% static 'js/chart.min.js' %}"></script>
+    <script src="{% static 'js/script-make-chart.js' %}"></script>
+
+    <script>
+        renderScatterChart('chartPrevisao', {{data.fit_border_coords}}, {{data.train_coords}}, {{data.test_coords}});
+
+        renderDoubleChart('Vendas Por Tipo de Roupa', 'Feminino', 'Masculino', {{data.qtd_tipo_roupa.0|safe}}, {{data.qtd_tipo_roupa.1}}, {{data.qtd_tipo_roupa.2}}, 'chartTipoRoupa', 'Tipos', 'Quantidade de Vendas');
+
+        renderDoubleChart('Vendas Por Tamanho', 'Feminino', 'Masculino', {{data.qtd_tamanho.0|safe}}, {{data.qtd_tamanho.1}}, {{data.qtd_tamanho.2}}, 'chartTamanho', 'Tamanhos', 'Quantidade de Vendas');
+
+        renderDoubleChart('Vendas Por Cor', 'Feminino', 'Masculino', {{data.qtd_cor.0|safe}}, {{data.qtd_cor.1}}, {{data.qtd_cor.2}}, 'chartCor', 'Cores', 'Quantidade de Vendas');
+
+        let rotulosLoja = ['Física', 'Online'];
+        renderPieChart('Vendas Totais Por Tipo de Loja (%)', rotulosLoja, {{data.qtd_tipo_loja}}, 'chartTipoLoja');
+
+        let rotulosGenero = ['Feminino', 'Masculino'];
+        renderPieChart('Vendas Totais Por Gênero (%)', rotulosGenero, {{data.qtd_genero}}, 'chartGenero');
+
+        renderSimpleChart('Dinheiro Ganho Por Mês', 'Vendas (R$)', {{data.qtd_dinheiro_mes.0|safe}}, {{data.qtd_dinheiro_mes.1}}, 'chartVendasMes', 'Meses', 'R$');
+    </script>
+{% endblock 'content' %}

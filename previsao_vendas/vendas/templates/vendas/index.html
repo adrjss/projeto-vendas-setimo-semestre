@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'title' %}
+    Index
+{% endblock 'title' %}
+
+{% block 'content' %}
+    <div class="container">
+        <h1>Vendas</h1>
+        
+        <a href="{% url 'vendas:vendas_create' %}" class="btn btn-success mt-5 mb-2">Cadastrar Venda</a> 
+        <a href="{% url 'vendas:vendas_charts' %}" class="btn btn-info mt-5 mb-2">Exibir Gráficos</a> 
+
+        <table class="table table-striped table-hover text-center">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Onde Comprou</th>
+                    <th>Gênero</th>
+                    <th>Tipo de Roupa</th>
+                    <th>Cor</th>
+                    <th>Tamanho</th>
+                    <th>Preço</th>
+                    <th>Estação</th>
+                    <th>Mês</th>
+                    <th colspan="2">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for venda in vendas %}
+                    <tr>
+                        <td>{{ venda.id }}</td>
+                        <td>{{ venda.onde_comprou }}</td>
+                        <td>{{ venda.genero }}</td>
+                        <td>{{ venda.tipo_roupa }}</td>
+                        <td>{{ venda.cor }}</td>
+                        <td>{{ venda.tamanho }}</td>
+                        <td>{{ venda.preco|floatformat:2 }}</td>
+                        <td>{{ venda.estacao }}</td>
+                        <td>{{ venda.mes }}</td>
+                        <td><a class='btn btn-outline-secondary' href='{% url "vendas:vendas_edit" venda.id %}'><i class='fa-solid fa-pen-to-square'></i></a></td>
+                        <td><a class='btn btn-outline-danger' href='{% url "vendas:vendas_delete" venda.id %}'><i class='fa-solid fa-trash-can'></i></a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="9">Sem Registros</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <nav aria-label="Page navigation example">
+            <p>Página {{ vendas.number }} de {{ vendas.paginator.num_pages }}</p>
+            <ul class="pagination">
+                {% if vendas.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; Primeira</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ vendas.previous_page_number }}">{{ vendas.previous_page_number }}</a></li>
+                {% endif %}
+                    
+                <li class="page-item active"><a class="page-link" href="#">{{ vendas.number }}</a></li>
+
+                {% if vendas.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ vendas.next_page_number }}">{{ vendas.next_page_number }}</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ vendas.paginator.num_pages }}">Última &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    <script src="{% static 'js/sweetalert2.js' %}"></script>
+{% endblock 'content' %}
