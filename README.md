@@ -9,6 +9,8 @@
 * [THIAGO DA SILVA NUNES](https://github.com/ThiagoDaSilvaNunes)
 * [VITÓRIA ALVES DA SILVA](https://github.com/vitoriaalves86)
 
+Todo o código utilizado na manipulação dos dados desse sistema foi primeiramente criado e testado através do Google Colab. O sistema django foi construído com o objetivo de tornar a visualização dos dados mais agradável e também permitir a manipulação do banco de dados utilizado. Basta clicar <a href="https://colab.research.google.com/drive/1aPan44d_k0uDa1aUF2EwXxsqAPqGNTAp">aqui</a> para ter acesso ao notebook.
+
 ## Telas do sistema:
 ### Tela inicial
 <a href="https://imgur.com/nxDMMpN"><img src="https://i.imgur.com/nxDMMpN.png" title="source: imgur.com" /></a>
