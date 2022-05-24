@@ -3,10 +3,10 @@
 ## Grupo:
 
 * [ADRIAN JOSÉ DA SILVA](https://github.com/redryun)
-* DEBORAH BRITO BARBOSA
-* EMERSON DE LIMA TORRES
+* [DEBORAH BRITO BARBOSA](https://github.com/debor4h)
+* [EMERSON DE LIMA TORRES](https://github.com/emersonfiwre)
 * JOÃO KAÍQUE DE OLIVEIRA AGUIAR (eu mesmo &#x1F60F;)
-* THIAGO DA SILVA NUNES
+* [THIAGO DA SILVA NUNES](https://github.com/ThiagoDaSilvaNunes)
 * [VITÓRIA ALVES DA SILVA](https://github.com/vitoriaalves86)
 
 ## Telas do sistema:
