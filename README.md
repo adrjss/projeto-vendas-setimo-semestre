@@ -2,7 +2,7 @@
 
 ## Grupo:
 
-* [ADRIAN JOSÉ DA SILVA](https://github.com/redryun)
+* [ADRIAN JOSÉ DA SILVA](https://github.com/adrjss)
 * [DEBORAH BRITO BARBOSA](https://github.com/debor4h)
 * [EMERSON DE LIMA TORRES](https://github.com/emersonfiwre)
 * JOÃO KAÍQUE DE OLIVEIRA AGUIAR (eu mesmo &#x1F60F;)
