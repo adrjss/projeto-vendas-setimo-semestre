@@ -5,7 +5,7 @@
 * [ADRIAN JOSÉ DA SILVA](https://github.com/adrjss)
 * [DEBORAH BRITO BARBOSA](https://github.com/debor4h)
 * [EMERSON DE LIMA TORRES](https://github.com/emersonfiwre)
-* JOÃO KAÍQUE DE OLIVEIRA AGUIAR (eu mesmo &#x1F60F;)
+* [JOÃO KAÍQUE DE OLIVEIRA AGUIAR](https://github.com/JonhFiv5)
 * [THIAGO DA SILVA NUNES](https://github.com/ThiagoDaSilvaNunes)
 * [VITÓRIA ALVES DA SILVA](https://github.com/vitoriaalves86)
 
